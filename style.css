@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  contain: layout inline-size;
+}
+
+.cell:first-child {
+  width: 50%;
+  height: 100%;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.cell:last-child {
+  flex-grow: 1;
+}
+
+.cell-content {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.cell-content {
+  border-radius: 50px;
+  background-color: #ffd3b4;
+  background-image: url("./images/face-large.svg");
+}
+
+@container (max-width: 250px) {
+  .cell-content {
+    border-radius: 25px;
+    background-color: #d5ecc2;
+    background-image: url("./images/face-medium.svg");
+  }
+}
+
+@container (max-width: 150px) {
+  .cell-content {
+    border-radius: 10px;
+    background-color: #a3e4d2;
+    background-image: url("./images/face-small.svg");
+  }
+}
